@@ -1,5 +1,8 @@
 import 'dart:html';
+import 'package:friendlychat/main.dart' as app;
+import 'package:flutter_web_ui/ui.dart' as ui;
 
-void main() {
-  querySelector('#output').text = 'Your Dart app is running.';
+void main() async{
+  await ui.webOnlyInitializePlatform();
+  app.main();
 }

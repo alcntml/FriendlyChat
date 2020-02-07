@@ -2,18 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'materialweb.dart';
-import 'package:friendlychat/main.dart' as app;
-import 'package:flutter_web_ui/ui.dart' as ui;
 
-void main() async {
-  if (defaultTargetPlatform == TargetPlatform.iOS ||
-      defaultTargetPlatform == TargetPlatform.android) {
-    runApp(FriendlychatApp());
-  } else {
-    await ui.webOnlyInitializePlatform();
-    app.main();
-    runApp(FriendlychatApp());
-  }
+
+void main() {
+  runApp(FriendlychatApp());
 }
 
 final ThemeData kIOSTheme = ThemeData(
