@@ -6,13 +6,13 @@ import 'package:friendlychat/main.dart' as app;
 import 'package:flutter_web_ui/ui.dart' as ui;
 
 void main() async {
-  if(defaultTargetPlatform == TargetPlatform.iOS){
+  if (defaultTargetPlatform == TargetPlatform.iOS ||
+      defaultTargetPlatform == TargetPlatform.android) {
     runApp(FriendlychatApp());
-  }else if(defaultTargetPlatform == TargetPlatform.android){
-    runApp(FriendlychatApp());
-  }else{
+  } else {
     await ui.webOnlyInitializePlatform();
     app.main();
+    runApp(FriendlychatApp());
   }
 }
 
